@@ -6,6 +6,7 @@ app = Flask(__name__)
 def start():
     data = request.json
     message = data.get('message', '')
+    print("message", message)
     parse_and_schedule(message)
     return "OK", 200
 
