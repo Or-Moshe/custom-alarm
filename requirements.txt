@@ -3,3 +3,7 @@ schedule~=1.2.2
 time
 datetime~=5.5
 python-dotenv~=1.0.1
+pyuac
+win32security
+pywin32
+APScheduler
