@@ -1,6 +1,5 @@
 import ctypes
 from apscheduler.schedulers.background import BackgroundScheduler
-from datetime import datetime
 from alarm.music_executer import open_random_youtube
 
 # Windows API flags
@@ -20,12 +19,12 @@ scheduler = BackgroundScheduler()
 job_added = False
 
 def doSomething():
-    print("Doing scheduled work at", datetime.now())
     open_random_youtube()
 
 def start_scheduler(hour, minute):
     global job_added
     if not job_added:
+        print(f"Doing scheduled work at {hour}:{minute}", )
         scheduler.add_job(doSomething, 'cron', hour=hour, minute=minute, id='daily_job')
         job_added = True
     if not scheduler.running:
